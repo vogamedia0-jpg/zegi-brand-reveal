@@ -250,6 +250,9 @@ function Presentation() {
     else await document.exitFullscreen();
   };
 
+  const activeSlide = slides[current] ?? slides[0];
+  if (!activeSlide) return null;
+
   return (
     <main className={`presentation-shell ${isFullscreen ? "is-fullscreen" : ""}`}>
       <header className="app-bar">
@@ -271,7 +274,7 @@ function Presentation() {
       </aside>
 
       <div className="stage">
-        <div className="slide-scaler" key={current}>{slides[current].render()}</div>
+        <div className="slide-scaler" key={current}>{activeSlide.render()}</div>
       </div>
 
       <div className="navigation-pill">
