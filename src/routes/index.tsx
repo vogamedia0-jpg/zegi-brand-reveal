@@ -228,7 +228,7 @@ function Presentation() {
   }, [slides.length]);
 
   useEffect(() => {
-    document.title = `${current + 1}/${slides.length} — ${slides[current].title}`;
+    document.title = `${current + 1}/${slides.length} — ${slides[current]?.title ?? "Zegi Holidays"}`;
     const onKey = (event: KeyboardEvent) => {
       if (event.key === "ArrowRight" || event.key === " ") goTo(current + 1);
       if (event.key === "ArrowLeft") goTo(current - 1);
