@@ -152,6 +152,60 @@ em { color: var(--sand); font-weight: 400; }
 .closing-copy .brand-logo { width: 590px; }.closing-copy .slide-subtitle { margin-top: 65px; }
 .closing-foot { position: absolute; left: 130px; bottom: 80px; color: var(--sand); }
 
+
+/* Expanded brand story */
+.slide-opening .slide-image { position: absolute; inset: 0; }
+.opening-vignette { position: absolute; inset: 0; background: linear-gradient(90deg, color-mix(in oklab, var(--ink) 28%, transparent), transparent 42%, color-mix(in oklab, var(--ink) 12%, transparent)); }
+.opening-page { position: absolute; left: 80px; bottom: 64px; color: var(--ivory); text-transform: uppercase; }
+
+.slide-essence { padding: 105px 120px; background: var(--ocean); color: var(--ivory); }
+.essence-header { display: flex; align-items: end; justify-content: space-between; }
+.essence-header .slide-kicker { color: var(--sand); align-self: start; }
+.essence-header .slide-title { margin: 0; width: 780px; }
+.essence-words { position: absolute; left: 120px; right: 120px; bottom: 105px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid color-mix(in oklab, var(--ivory) 28%, transparent); }
+.essence-words article { min-height: 320px; padding: 38px 54px 0 0; border-right: 1px solid color-mix(in oklab, var(--ivory) 20%, transparent); }
+.essence-words article + article { padding-left: 54px; }
+.essence-words article:last-child { border-right: 0; }
+.essence-words span { color: var(--sand); font: 22px var(--font-display); }
+.essence-words strong { display: block; margin-top: 72px; font: 58px var(--font-display); font-weight: 400; }
+.essence-words p { max-width: 360px; margin-top: 22px; color: color-mix(in oklab, var(--ivory) 72%, transparent); font-size: 23px; line-height: 1.5; }
+
+.slide-signature { display: grid; grid-template-columns: 66% 34%; background: var(--ivory); }
+.signature-image { width: 100%; height: 100%; object-fit: cover; object-position: 49% center; }
+.signature-note { display: flex; flex-direction: column; justify-content: center; padding: 90px; background: var(--ocean); color: var(--ivory); }
+.signature-note .slide-kicker { color: var(--sand); }
+.signature-note .slide-subtitle { margin-top: 70px; }
+.signature-line { position: absolute; left: calc(66% - 120px); bottom: 110px; width: 240px; height: 1px; background: var(--sand); }
+
+.slide-mark-detail { display: grid; grid-template-columns: 52% 48%; background: var(--ivory); }
+.mark-detail-copy { display: flex; flex-direction: column; justify-content: center; padding: 120px 80px 120px 135px; }
+.mark-detail-copy .slide-kicker { color: var(--sand); }
+.mark-detail-copy .display-xl { color: var(--ocean); }
+.mark-detail-copy .slide-body { max-width: 650px; color: var(--muted-foreground); }
+.mark-detail-visual { display: grid; place-items: center; overflow: hidden; background: color-mix(in oklab, var(--mist) 13%, var(--ivory)); }
+.mark-detail-visual img { width: 74%; height: 74%; object-fit: contain; }
+.mark-rule { position: absolute; left: 135px; bottom: 82px; width: 230px; height: 2px; background: var(--sand); }
+.palette-note { margin: 0 0 10px; color: var(--muted-foreground); font-size: 18px; text-transform: uppercase; letter-spacing: .2em; }
+.color-label small { font-size: 13px; letter-spacing: .18em; opacity: .68; }
+
+.slide-travel-system .slide-image, .slide-arrival .slide-image, .slide-lobby .slide-image, .slide-concierge .slide-image { position: absolute; inset: 0; }
+.travel-system-caption { position: absolute; left: 0; top: 0; width: 610px; height: 100%; padding: 115px; display: flex; flex-direction: column; justify-content: center; color: var(--ivory); background: linear-gradient(90deg, color-mix(in oklab, var(--ocean) 96%, transparent), color-mix(in oklab, var(--ocean) 84%, transparent) 72%, transparent); }
+.travel-system-caption .slide-kicker, .arrival-copy .slide-kicker, .lobby-panel .slide-kicker, .concierge-copy .slide-kicker { color: var(--sand); }
+.travel-system-caption .slide-title { font-size: 68px; }
+.travel-system-caption .slide-body { color: color-mix(in oklab, var(--ivory) 78%, transparent); }
+
+.arrival-copy { position: absolute; right: 86px; top: 84px; width: 540px; padding: 54px 62px 60px; color: var(--ivory); background: color-mix(in oklab, var(--ocean) 92%, transparent); }
+.arrival-copy .slide-title { font-size: 66px; }
+.arrival-index { position: absolute; right: 92px; bottom: 68px; color: var(--ivory); }
+
+.lobby-panel { position: absolute; right: 0; bottom: 0; width: 700px; padding: 62px 86px 70px; background: var(--ivory); }
+.lobby-panel .slide-title { font-size: 66px; }
+.lobby-panel .slide-body { color: var(--muted-foreground); }
+
+.concierge-copy { position: absolute; left: 85px; top: 84px; width: 690px; padding: 54px 62px 58px; color: var(--ivory); background: color-mix(in oklab, var(--ocean) 92%, transparent); }
+.concierge-copy .slide-title { font-size: 66px; }
+.concierge-rule { position: absolute; left: 85px; bottom: 72px; width: 310px; height: 2px; background: var(--sand); }
+
 .navigation-pill { position: fixed; z-index: 30; left: calc(50% + 95px); bottom: 22px; transform: translateX(-50%); padding: 5px; gap: 4px; background: oklch(0.18 0.045 215 / 90%); border: 1px solid oklch(1 0 0 / 12%); border-radius: 30px; backdrop-filter: blur(15px); color: var(--ivory); }
 .navigation-pill button { display: grid; place-items: center; width: 38px; height: 38px; border: 0; border-radius: 50%; }
 .navigation-pill button:disabled { opacity: .25; cursor: default; }
