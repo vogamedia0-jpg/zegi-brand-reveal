@@ -8,7 +8,7 @@ import {
   Play,
   X,
 } from "lucide-react";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import logo from "../assets/zegi-logo-transparent.png.asset.json";
 import brandBoard from "../assets/Zegi_Holidays_Coastal_Brand_Board.webp.asset.json";
@@ -61,6 +61,7 @@ function Presentation() {
   const [current, setCurrent] = useState(0);
   const [overview, setOverview] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const stageRef = useRef<HTMLDivElement>(null);
 
   const slides = useMemo<Slide[]>(() => [
     {
@@ -245,6 +246,19 @@ function Presentation() {
     return () => document.removeEventListener("fullscreenchange", onFullscreen);
   }, []);
 
+  useEffect(() => {
+    const stage = stageRef.current;
+    if (!stage) return;
+    const updateScale = () => {
+      const scale = Math.min(stage.clientWidth / 1920, stage.clientHeight / 1080);
+      stage.style.setProperty("--stage-scale", String(scale));
+    };
+    const observer = new ResizeObserver(updateScale);
+    observer.observe(stage);
+    updateScale();
+    return () => observer.disconnect();
+  }, []);
+
   const present = async () => {
     if (!document.fullscreenElement) await document.documentElement.requestFullscreen();
     else await document.exitFullscreen();
@@ -273,7 +287,7 @@ function Presentation() {
         ))}
       </aside>
 
-      <div className="stage">
+      <div className="stage" ref={stageRef}>
         <div className="slide-scaler" key={current}>{activeSlide.render()}</div>
       </div>
 
