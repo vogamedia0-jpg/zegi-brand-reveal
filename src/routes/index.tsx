@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
-import logo from "../assets/Zegi_logo.png.asset.json";
+import logo from "../assets/zegi-logo-transparent.png.asset.json";
 import brandBoard from "../assets/Zegi_Holidays_Coastal_Brand_Board.webp.asset.json";
 import palette from "../assets/Zegi_holidays_brand_color_palette.webp.asset.json";
 import businessCards from "../assets/Zegi_holidays_business_card.JPG.asset.json";
